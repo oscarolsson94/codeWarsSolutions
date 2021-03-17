@@ -1,0 +1,14 @@
+public class NumberFun {
+  public static long findNextSquare(long sq) {
+      
+    if((sq % Math.sqrt(sq)) != 0) return -1;  
+    
+    while(true){
+      
+      sq++;
+      
+      if((sq % Math.sqrt(sq)) == 0) return sq;
+      
+    }
+  }
+}
