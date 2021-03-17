@@ -1,0 +1,42 @@
+public class HumanReadableTime {
+  public static String makeReadable(int seconds) {
+    
+    String hours;
+    String minutes;
+    String mySeconds;
+    
+    int remainingSeconds;
+    
+    if(seconds < 3600){
+      hours = Integer.toString(0);
+      remainingSeconds = seconds;
+    }else{
+      hours = Integer.toString((seconds - (seconds % 3600))/3600);
+      remainingSeconds = seconds % 3600;
+    }
+    if(remainingSeconds < 60){
+      minutes = Integer.toString(0);
+    }
+    else{
+      minutes = Integer.toString((remainingSeconds - (remainingSeconds % 60))/60);
+      remainingSeconds = remainingSeconds % 60;
+    }
+    
+    mySeconds = Integer.toString(remainingSeconds);
+    
+    
+    if(hours.length() == 1){
+      hours = "0" + hours;
+    }
+    if(minutes.length() ==1){
+      minutes = "0" + minutes;
+    }
+    if(mySeconds.length() ==1){
+      mySeconds = "0" + mySeconds;
+    }
+    
+    String timeString = hours + ":" + minutes + ":" + mySeconds;    
+    
+    return timeString;
+  }
+}
