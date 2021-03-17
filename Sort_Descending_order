@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class DescendingOrder {
+  public static int sortDesc(final int num) {
+    String numberString = String.valueOf(num);  
+    int[] intArr = new int[numberString.length()];
+    
+    for(int i = 0; i < numberString.length(); i++){
+      
+      intArr[i] = Integer.parseInt(numberString.substring(i,i+1));
+      
+      }
+    
+    Arrays.sort(intArr);
+
+    numberString ="";
+    
+    for(int i = 0; i < intArr.length; i++){
+      numberString += String.valueOf(intArr[intArr.length-1-i]);
+    }
+    
+    return Integer.parseInt(numberString);
+      
+    
+    
+  }
+}
