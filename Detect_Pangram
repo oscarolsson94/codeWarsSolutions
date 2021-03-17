@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class PangramChecker {
+  public boolean check(String sentence){
+    String newSentence=sentence.toLowerCase();
+    
+    Set<Character> set = new HashSet<Character>(); 
+    
+    for(int i = 0; i < newSentence.length(); i++){
+      if(Character.isLetter(newSentence.charAt(i))){
+        set.add(newSentence.charAt(i));
+      }
+      
+    }
+    
+    if(set.size() == 26){
+      return true;
+    }else{
+      return false;
+    }
+    
+  }
+}
