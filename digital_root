@@ -12,7 +12,7 @@ public class DRoot {
       sum += numberAsString.charAt(i) -'0';
     }
     
-    if(sum < 9){
+    if(sum < 10){
       return sum;
     }
     else{
