@@ -1,0 +1,31 @@
+function order(words){
+  if(words === "") return "";
+  
+  let wordArray = words.split(' ');
+  let sortedArray = []
+  let sortedString = ""
+  
+  for(let i = 0; i < wordArray.length; i++){
+    [...wordArray[i]].forEach((letter) => {
+      let number = parseInt(letter, 10);
+      if(typeof number === "number"){
+        sortedArray[number-1] = wordArray[i];
+        }
+    })
+  }
+  
+  for(let i = 0; i < sortedArray.length; i++){
+    sortedString += sortedArray[i] + " ";
+  }
+  
+  return sortedString.trim();
+}
+
+/* describe("order", () => {
+  it("should work corectly", () => {
+    assert.strictEqual(order("is2 Thi1s T4est 3a"), "Thi1s is2 3a T4est")
+    assert.strictEqual(order("4of Fo1r pe6ople g3ood th5e the2"), "Fo1r the2 g3ood 4of th5e pe6ople")
+    assert.strictEqual(order(""), "", "empty input should return empty string" )
+  });
+});
+*/
